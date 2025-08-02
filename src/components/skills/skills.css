@@ -1,0 +1,92 @@
+.skills-container {
+    grid-template-columns: repeat(2, 400px);
+    column-gap: 4rem;
+    justify-content: center;
+}
+
+.skills-content {
+    background-color: var(--container-color);
+    padding: 2rem 4rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.skills-title {
+    text-align: center;
+    font-size: var(--normal-font-size);
+    font-weight: (--font-medium);
+    margin-bottom: var(--mb-1-5);
+}
+
+.skills-box {
+    display: flex;
+    justify-content: center;
+    column-gap: 2.5rem;
+}
+
+.skills-group {
+    display: grid;
+    align-items: flex-start;
+    row-gap: 1rem;
+}
+
+.skills-data {
+    display: flex;
+    column-gap: .75rem;
+    align-items: center;
+}
+
+.skills .bx-badge-check {
+    font-size: 1rem;
+    color: var(--title-color);
+}
+
+.skill-name {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    line-height: 18px;
+}
+
+.skill-level {
+    font-size: var(--tiny-font-size);
+}
+
+/* .skill-score{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.skill-score-circle {
+    background-color: transparent;
+    border: 3.5px solid var(--title-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+} */
+
+/* Break Points */
+@media screen and (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 300px);
+        column-gap: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: max-content;
+        row-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills-container {
+        grid-template-columns: 95%;
+    }
+}
+

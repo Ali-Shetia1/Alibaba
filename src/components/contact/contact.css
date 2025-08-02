@@ -1,0 +1,138 @@
+.contact-container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 6rem;
+    padding-bottom: 3rem;
+}
+
+.contact-content-title {
+    text-align: center;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1-5);
+}
+
+.contact-methods {
+    display: grid;
+    row-gap: 1rem;
+    grid-template-columns: 300px;
+}
+
+.contact-method {
+    background-color: var(--container-color);
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+}
+
+.contact-method-icon {
+    font-size: 2rem;
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-25);
+}
+
+.contact-method-title,
+.contact-method-details {
+    font-size: var(--small-font-size);
+}
+
+.contact-method-title {
+    font-weight: var(--font-medium);
+}
+.contact-method-details {
+    display: block;
+    margin-bottom: var(--mb-0-75);
+}
+
+.contact-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .25rem;
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+}
+
+.contact-button-icon {
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.contact-button:hover .contact-button-icon {
+    transform: translate(.254rem);
+}
+
+.contact-form {
+    width: 360px;
+}
+
+.contact-field {
+    position: relative;
+    height: 4rem;
+    margin-bottom: var(--mb-2);
+}
+
+.contact-field-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: none;
+    padding: 1.5rem;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    color: var(--text-color);
+    border-radius: 0.75rem;
+    z-index: 1;
+}
+
+.contact-field-label {
+    position: absolute;
+    top: -0.8rem;
+    left: 1.25rem;
+    font-size: var(--smaller-font-size);
+    padding: 0.25rem;
+    background-color: var(--body-color);
+    z-index: 10;
+}
+
+.contact-field-area {
+    height: 11rem;
+    margin-bottom: 2rem;
+}
+
+.contact-field-area textarea {
+    resize: none;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        column-gap: 3rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contact-container {
+        grid-template-columns: max-content;
+    }
+    .contact-methods {
+        justify-content: center;
+    }
+
+    .contact-form .send-message {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .contact-methods {
+        grid-template-columns: 280px;
+    }
+    .contact-form {
+        width: 280px;
+    }
+}

@@ -1,0 +1,216 @@
+/* Projects Section Styles */
+.projects-container {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: var(--container-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 8px 35px rgba(14, 36, 49, 0.2);
+}
+
+.project-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay-content {
+  text-align: center;
+  color: var(--container-color);
+  padding: 1rem;
+}
+
+.project-overlay-title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--mb-0-5);
+  color: var(--container-color);
+}
+
+.project-overlay-description {
+  font-size: var(--small-font-size);
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1);
+  color: var(--title-color);
+}
+
+.project-button {
+  background-color: var(--title-color);
+  color: var(--container-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-button:hover {
+  background-color: var(--title-color-dark);
+}
+
+.project-button-icon {
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.project-button:hover .project-button-icon {
+  transform: translateX(0.25rem);
+}
+
+/* Responsive Design */
+
+/* Large Devices (Desktops) */
+@media screen and (max-width: 992px) {
+  .projects-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .project-image-container {
+    height: 180px;
+  }
+  
+  .project-content {
+    padding: 1.25rem;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media screen and (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .project-image-container {
+    height: 200px;
+  }
+  
+  .project-overlay-title {
+    font-size: var(--normal-font-size);
+  }
+  
+  .project-overlay-description {
+    font-size: var(--smaller-font-size);
+  }
+  
+  .project-title {
+    font-size: var(--normal-font-size);
+  }
+  
+  .project-button {
+    padding: 0.65rem 1.25rem;
+    font-size: var(--smaller-font-size);
+  }
+}
+
+/* Small Devices (Mobile) */
+@media screen and (max-width: 568px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-image-container {
+    height: 220px;
+  }
+  
+  .project-content {
+    padding: 1rem;
+  }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 350px) {
+  .projects-container {
+    gap: 1rem;
+  }
+  
+  .project-image-container {
+    height: 180px;
+  }
+  
+  .project-content {
+    padding: 0.75rem;
+  }
+  
+  .project-title {
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-0-75);
+  }
+  
+  .project-button {
+    padding: 0.5rem 1rem;
+    font-size: var(--tiny-font-size);
+  }
+  
+  .project-overlay-content {
+    padding: 0.5rem;
+  }
+  
+  .project-overlay-title {
+    font-size: var(--small-font-size);
+  }
+  
+  .project-overlay-description {
+    font-size: var(--tiny-font-size);
+  }
+}
