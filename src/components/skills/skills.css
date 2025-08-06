@@ -6,7 +6,7 @@
 
 .skills-content {
     background-color: var(--container-color);
-    padding: 2rem 4rem;
+    padding: 2rem 2.5rem;
     border-radius: 1.25rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -21,7 +21,7 @@
 .skills-box {
     display: flex;
     justify-content: center;
-    column-gap: 2.5rem;
+    column-gap: 2rem;
 }
 
 .skills-group {

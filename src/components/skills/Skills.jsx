@@ -1,7 +1,7 @@
 import React from 'react'
 import './skills.css';
 import Frontend from './Frontend';
-import UIUX from './Backend';
+import OtherSkills from './OtherSkills';
 const Skills = () => {
   return (
     <section className="section skills-section" id="skills">
@@ -10,7 +10,7 @@ const Skills = () => {
         
         <div className="skills-container container grid">
             <Frontend />
-            <UIUX />
+            <OtherSkills />
         </div>
     </section>
   )

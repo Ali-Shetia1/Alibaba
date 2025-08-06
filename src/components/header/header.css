@@ -19,7 +19,16 @@
 .nav-toggle {
     color: var(--titel-color);
     font-weight: var(--font-medium);
-    font-size: 1rem
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+/* Button styling for nav-logo and nav-link */
+.nav-logo {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-list {
@@ -35,6 +44,10 @@
     color: var(--title-color);
     font-weight: var(--font-medium);
     transition: 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-icon,

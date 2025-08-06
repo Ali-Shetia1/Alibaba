@@ -10,6 +10,11 @@
     margin-bottom: var(--mb-2);
 }
 
+.qualifications-tabs > .qualifications-button:nth-child(3), .qualifications-button:nth-child(2) {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 .qualifications-button {
     font-size: var(--h3-font-size);
     font-weight: var(--font-medium);

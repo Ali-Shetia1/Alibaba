@@ -39,7 +39,15 @@ export const Frontend = () => {
                             <span className="skill-level">Intermediate</span>
                         </div>
                     </div>
+                    <div className="skills-data">
+                        <i className="bx bx-badge-check"></i>
+                        <div>
+                            <h3 className="skill-name">Redux</h3>
+                            <span className="skill-level">Intermediate</span>
+                        </div>
+                    </div>
                 </div>
+                
 
                 <div className="skills-group">
 
@@ -63,6 +71,13 @@ export const Frontend = () => {
                         <i className="bx bx-badge-check"></i>
                         <div>
                             <h3 className="skill-name">React</h3>
+                            <span className="skill-level">Intermediate</span>
+                        </div>
+                    </div>
+                    <div className="skills-data">
+                        <i className="bx bx-badge-check"></i>
+                        <div>
+                            <h3 className="skill-name">TypeScript</h3>
                             <span className="skill-level">Intermediate</span>
                         </div>
                     </div>

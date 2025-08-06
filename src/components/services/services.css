@@ -34,6 +34,12 @@
     font-size: var(--small-font-size);
 }
 
+.services-buttons-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: none;
+}
+
 .services-button-icon {
     font-size: 1rem;
     transition: 0.3s;
@@ -54,8 +60,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    visibility: hidden;
     padding: 0 1rem;
     transition: 0.3s;
 }
@@ -113,11 +117,7 @@
     font-size: var(--small-font-size);
 }
 
-/* Active Modal */
-.active-modal {
-    opacity: 1;
-    visibility: visible;
-}
+
 
 @media screen and (max-width: 992px) {
     .services-container {

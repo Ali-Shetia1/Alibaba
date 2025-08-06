@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./header.css";
-import Qualifications from "../qualifications/Qualifications";
 const Header = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    
     const selectedNav = {
         HOME: 'HOME',
         ABOUT: 'ABOUT',
@@ -13,55 +16,85 @@ const Header = () => {
     }
     const [toggle, showMenu] = useState(false);
     const [selectedNavState, setSelectedNavState] = useState(selectedNav.HOME);
+
+    // Handle navigation - if we're on a project page, navigate to home first
+    const handleNavigation = (section, navState) => {
+        setSelectedNavState(navState);
+        showMenu(false); // Close mobile menu
+        
+        if (location.pathname !== '/') {
+            // If we're on a project page, navigate to home then scroll to section
+            navigate('/');
+            setTimeout(() => {
+                document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        } else {
+            // If we're already on home, just scroll to section
+            document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     
     return (
             <header className="header">
                 <nav className="nav container">
-                    <a href="index.html" className="nav-logo">ALIBABA</a>
+                    <button onClick={() => navigate('/')} className="nav-logo">ALIBABA</button>
                     <div className={toggle ? "nav-menu show-menu" : "nav-menu"}>
                         <ul className="nav-list grid">
                             <li className="nav-item">
-                                <a href="#home" className={selectedNavState === selectedNav.HOME ? "nav-link active-link" : "nav-link"}
-                                onClick={() => setSelectedNavState(selectedNav.HOME)}>
+                                <button 
+                                    className={selectedNavState === selectedNav.HOME ? "nav-link active-link" : "nav-link"}
+                                    onClick={() => handleNavigation('home', selectedNav.HOME)}
+                                >
                                     <i className="uil uil-estate nav-icon"></i> Home
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a href="#about"
-                                className={selectedNavState === selectedNav.ABOUT ? "nav-link active-link" : "nav-link"}
-                                onClick={() => setSelectedNavState(selectedNav.ABOUT)}>
+                                <button 
+                                    className={selectedNavState === selectedNav.ABOUT ? "nav-link active-link" : "nav-link"}
+                                    onClick={() => handleNavigation('about', selectedNav.ABOUT)}
+                                >
                                     <i className="uil uil-user nav-icon"></i> About
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a href="#skills" className={selectedNavState === selectedNav.SKILLS ? "nav-link active-link" : "nav-link"}
-                                onClick={() => setSelectedNavState(selectedNav.SKILLS)}>
+                                <button 
+                                    className={selectedNavState === selectedNav.SKILLS ? "nav-link active-link" : "nav-link"}
+                                    onClick={() => handleNavigation('skills', selectedNav.SKILLS)}
+                                >
                                     <i className="uil uil-file-alt nav-icon"></i> Skills
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a href="#services" className={selectedNavState === selectedNav.SERVICES ? "nav-link active-link" : "nav-link"}
-                                onClick={() => setSelectedNavState(selectedNav.SERVICES)}>
+                                <button 
+                                    className={selectedNavState === selectedNav.SERVICES ? "nav-link active-link" : "nav-link"}
+                                    onClick={() => handleNavigation('services', selectedNav.SERVICES)}
+                                >
                                     <i className="uil uil-briefcase-alt nav-icon"></i> Services
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a href="#projects" className={selectedNavState === selectedNav.PROJECTS ? "nav-link active-link" : "nav-link"}
-                                onClick={() => setSelectedNavState(selectedNav.PROJECTS)}>
+                                <button 
+                                    className={selectedNavState === selectedNav.PROJECTS ? "nav-link active-link" : "nav-link"}
+                                    onClick={() => handleNavigation('projects', selectedNav.PROJECTS)}
+                                >
                                     <i className="uil uil-layers nav-icon"></i> Projects
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a href="#qualifications" className={selectedNavState === selectedNav.Qualifications ? "nav-link active-link" : "nav-link"}
-                                onClick={() => setSelectedNavState(selectedNav.Qualifications)}>
+                                <button 
+                                    className={selectedNavState === selectedNav.Qualifications ? "nav-link active-link" : "nav-link"}
+                                    onClick={() => handleNavigation('qualifications', selectedNav.Qualifications)}
+                                >
                                     <i className="uil uil-scenery nav-icon"></i> Qualifications
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a href="#contact" className={selectedNavState === selectedNav.CONTACT ? "nav-link active-link" : "nav-link"}
-                                onClick={() => setSelectedNavState(selectedNav.CONTACT)}>
+                                <button 
+                                    className={selectedNavState === selectedNav.CONTACT ? "nav-link active-link" : "nav-link"}
+                                    onClick={() => handleNavigation('contact', selectedNav.CONTACT)}
+                                >
                                     <i className="uil uil-message nav-icon"></i> Contact
-                                </a>
+                                </button>
                             </li>
                         </ul>
                         <i className="uil uil-times nav-close" onClick={() => {showMenu(!toggle)}}></i>
