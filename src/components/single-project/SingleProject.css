@@ -14,11 +14,6 @@
   padding: 0 2rem;
 }
 
-/* Back Button */
-.back-button-container {
-  margin-bottom: 2rem;
-}
-
 .back-button {
   background-color: var(--container-color);
   color: var(--title-color);
@@ -29,6 +24,7 @@
   font-weight: var(--font-medium);
   transition: all 0.3s;
   gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .back-button:hover {
@@ -55,15 +51,16 @@
 .project-image-main {
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 8px 35px rgba(14, 36, 49, 0.15);
   width: 90%;
+  box-shadow: 0 8px 35px rgba(14, 36, 49, 0.15);
+  
 }
 
 .project-image-main img {
   width: 100%;
-  height: auto;
-  display: block;
+  vertical-align: middle;
   transition: transform 0.3s;
+
 }
 
 
@@ -72,9 +69,8 @@
 }
 
 /* Image Gallery */
-.image-gallery {
+.images-gallery {
   margin-top: 2rem;
-  /* border: 1px solid blue; */
   width: 90%;
 }
 
@@ -96,7 +92,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 0.75rem;
-  width: 70%;
+  width: 90%;
 }
 
 .gallery-thumbnail {
@@ -104,7 +100,6 @@
   border-radius: 0.5rem;
   overflow: hidden;
   cursor: pointer;
-  /* aspect-ratio: 4/3; */
   border: 2px solid transparent;
   transition: all 0.3s ease;
 }
@@ -164,10 +159,6 @@
   gap: 2rem;
 }
 
-.project-info {
-  margin-bottom: 1rem;
-}
-
 .project-main-title {
   font-size: var(--h1-font-size);
   font-weight: var(--font-semi-bold);
@@ -224,7 +215,7 @@
   background: linear-gradient(135deg, var(--title-color), var(--title-color-dark));
   color: var(--container-color);
   padding: 0.5rem 1rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
   text-align: center;
@@ -392,7 +383,7 @@
   }
   
   .gallery-thumbnails {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
   }
   
@@ -459,7 +450,7 @@
   }
   
   .gallery-thumbnails {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.75rem;
   }
   
@@ -523,11 +514,11 @@
   }
   
   .gallery-thumbnails {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
   }
   
-  .image-gallery {
+  .images-gallery {
     margin-top: 1.5rem;
   }
   
@@ -561,15 +552,16 @@
   }
   
   .gallery-thumbnails {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.4rem;
+    /* width: 70%; */
   }
   
   .gallery-title {
     font-size: var(--small-font-size);
   }
   
-  .image-gallery {
+  .images-gallery {
     margin-top: 1rem;
   }
 }

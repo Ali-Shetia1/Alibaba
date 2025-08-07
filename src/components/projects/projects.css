@@ -11,7 +11,7 @@
   overflow: hidden;
   box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
   transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
+  position: relative;  
 }
 
 .project-card:hover {

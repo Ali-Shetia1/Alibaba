@@ -4,14 +4,15 @@ import { getProjectBySlug } from '../../data/projectsData';
 import './SingleProject.css';
 
 const SingleProject = () => {
+
   const { slug } = useParams();
   const navigate = useNavigate();
   const [showFeatures, setShowFeatures] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // Get project data by slug
+  // Fitch project by slug
   const project = getProjectBySlug(slug);
-
+  
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,23 +22,22 @@ const SingleProject = () => {
   useEffect(() => {
     setCurrentImageIndex(0);
   }, [slug]);
-
+  const handleReturnToProjects = () => {
+    navigate("/")
+    setTimeout(() => {
+      document.getElementById("projects")?.scrollIntoView({ behavior: 'smooth' });
+  }, 200);
+  }
   return (
     <main className="single-project-main">
       <section className="single-project-section">
         <div className="single-project-container container">
           
           {/* Back to Projects Button */}
-          <div className="back-button-container">
-            <button 
-              onClick={() => navigate('/#projects')} 
-              className="back-button button button-flex"
-            >
-              <i className="uil uil-arrow-left"></i>
+            <button className='back-button button button-flex' onClick={handleReturnToProjects}>
+              <i className='uil uil-arrow-left'></i>
               Back to Projects
             </button>
-          </div>
-
           {/* Project Layout: Image Left, Content Right */}
           <div className="project-layout">
             {/* Left Column - Image */}
@@ -45,12 +45,11 @@ const SingleProject = () => {
               <div className="project-image-main">
                 <img 
                   src={project.images ? project.images[currentImageIndex] : project.image} 
-                  alt={project.title} 
+                  alt={project.title}
                 />
               </div>
-              
               {/* Image Gallery Thumbnails */}
-              {project.images && project.images.length > 1 && (
+              {/* {project.images && project.images.length > 1 && (
                 <div className="image-gallery">
                   <h3 className="gallery-title">
                     <i className="uil uil-images"></i>
@@ -66,6 +65,24 @@ const SingleProject = () => {
                         <img src={image} alt={`${project.title} view ${index + 1}`} />
                         <div className="thumbnail-overlay">
                           <i className="uil uil-eye"></i>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )} */}
+              {project.images && project.images.length > 1 && (
+                <div className="images-gallery">
+                  <h3 className='gallery-title'>
+                    <i className='uil uil-images'></i>
+                    Project Gallery
+                  </h3>
+                  <div className="gallery-thumbnails">
+                    {project.images.map((image, index) => (
+                      <div key={index} className={`gallery-thumbnail ${currentImageIndex === index ? 'active': ''}`} onClick={() => setCurrentImageIndex(index)}>
+                        <img src={image} alt={`${project.title} view ${index + 1}`} />
+                        <div className="thumbnail-overlay">
+                          <i className='uil uil-eye'></i>
                         </div>
                       </div>
                     ))}
@@ -100,39 +117,35 @@ const SingleProject = () => {
               {/* Main Features */}
               <div className="project-section">
                 <div className="features-header">
-                  <h2 className="project-section-title">
-                    <i className="uil uil-star project-section-icon"></i>
+                  <h2 className='project-section-title'>
+                    <i className='uil uil-star project-section-icon'></i>
                     Key Features
                   </h2>
-                  <button 
-                    onClick={() => setShowFeatures(!showFeatures)}
-                    className="features-toggle-btn button button-flex"
-                  >
+                  <button className='features-toggle-btn button button-flex' onClick={() => setShowFeatures(!showFeatures)}>
                     {showFeatures ? (
                       <>
                         <i className="uil uil-eye-slash"></i>
                         Hide Features
                       </>
-                    ) : (
+                    ): (
                       <>
                         <i className="uil uil-eye"></i>
                         Show Features
                       </>
                     )}
                   </button>
+                  {showFeatures && (
+                    <ul className="features-list">
+                      {project.features.map((feature, index) => (
+                        <li key={index} className='feature-item'>
+                          <i className='uil uil-check-circle feature-icon'></i>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                {showFeatures && (
-                  <ul className="features-list">
-                    {project.features.map((feature, index) => (
-                      <li key={index} className="feature-item">
-                        <i className="uil uil-check-circle feature-icon"></i>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </div>
-
               {/* Project Actions */}
               <div className="project-actions">
                 <a 
