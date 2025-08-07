@@ -62,20 +62,12 @@ export const projectsData = [
     images: [Laptix], // Main image + 4 alternatives
     title: "Laptix Store",
     shortDescription: "Professional e-commerce store for selling laptops in Egypt",
-    longDescription: "",
+    longDescription: "Laptix eCommerce Store is a modern online platform built with React and Next.js, offering high-quality, pre-owned laptops in Egypt. Tailored for tech enthusiasts and students, it features a responsive TailwindCSS interface for seamless navigation. Powered by Prisma and PostgreSQL, it manages product listings and orders efficiently. Shoppers can filter laptops by specifications and use Algolia search for quick discovery. Secure payments via Stripe and Clerk authentication ensure a safe, personalized experience, with customer reviews boosting trust.",
     technologies: ["React", "NextJS", "TailwindCSS"],
     features: [
-      "Responsive design with mobile-first approach",
-      "Smooth scroll animations and transitions",
-      "Service showcase with detailed descriptions",
-      "Customer testimonials and reviews section",
-      "Integrated contact form with email functionality",
-      "Before/after project galleries",
-      "SEO optimized content structure",
-      "Performance optimized loading"
     ],
-    liveUrl: "https://ihsaa-maintenance.com",
-    githubUrl: "https://github.com/username/ihsaa-landing"
+    liveUrl: "https://laptix-egypt.vercel.app",
+    githubUrl: "https://github.com/Ali-Shetia1/Laptix"
   },
 ];
 
